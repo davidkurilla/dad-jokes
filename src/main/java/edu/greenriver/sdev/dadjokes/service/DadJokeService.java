@@ -25,11 +25,10 @@ public class DadJokeService {
         repository.save(joke);
     }
 
-    public void update(int id, String jokeText) {
-        DadJoke joke = repository.getById(id);
-        repository.deleteById(id);
+    public DadJoke update(int id, String jokeText) {
+        DadJoke joke = repository.findById(id).orElseThrow();
         joke.setJokeText(jokeText);
-        repository.save(joke);
+        return repository.save(joke);
     }
 
     public void delete(int id) {
