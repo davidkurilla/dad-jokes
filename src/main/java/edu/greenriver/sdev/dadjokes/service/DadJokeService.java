@@ -5,6 +5,7 @@ import edu.greenriver.sdev.dadjokes.model.DadJoke;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class DadJokeService {
@@ -31,5 +32,16 @@ public class DadJokeService {
 
     public void delete(int id) {
         repository.deleteById(id);
+    }
+
+    public DadJoke getByID(int id) {
+        return repository.getReferenceById(id);
+    }
+
+    public DadJoke randomJoke() {
+        Random rng = new Random();
+        List<DadJoke> jokes = repository.findAll();
+        int randID = rng.nextInt(1, jokes.size() + 1);
+        return repository.getReferenceById(randID);
     }
 }
