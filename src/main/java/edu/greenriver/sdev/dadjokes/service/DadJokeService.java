@@ -2,7 +2,6 @@ package edu.greenriver.sdev.dadjokes.service;
 
 import edu.greenriver.sdev.dadjokes.db.DadJokeRepository;
 import edu.greenriver.sdev.dadjokes.model.DadJoke;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +11,6 @@ public class DadJokeService {
 
     private DadJokeRepository repository;
 
-    @Autowired
     public DadJokeService(DadJokeRepository repository) {
         this.repository = repository;
     }
