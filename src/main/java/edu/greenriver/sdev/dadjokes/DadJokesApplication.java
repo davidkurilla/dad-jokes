@@ -27,6 +27,7 @@ public class DadJokesApplication {
         dadJokes.add(new DadJoke(8, "Why don't skeletons fight each other? They don't have the guts."));
         dadJokes.add(new DadJoke(9, "What do you call a belt made of watches? A waist of time."));
         dadJokes.add(new DadJoke(10, "I'm on a seafood diet. I see food and I eat it."));
+        dadJokes.add(new DadJoke(11, "New Funny Dad Joke"));
 
         repo.saveAll(dadJokes);
     }
